@@ -1,0 +1,98 @@
+donnees_jcd (récupération données en temps réel)
+    requête http-GET axios API JC DECAUX
+    trouverStationParCoordonnees()
+
+Class Données
+    init();
+        -> recupererDonnees
+    recupererDonnees();
+    trouverStationParCoordonnées()
+    donnees: []
+
+Class Carte
+    init(); //afficher carte leaflets 
+    
+    events
+        on(click, onClickOnMarker) 
+            - affiche l'infobulle
+            - affiche la popup infos station 
+            - si pas de velo dispo -> popup.masquer()
+            
+    methods
+        creerMarqueur();
+            - position marqueurs
+            - icônes personnalisées 3 couleurs
+            - infobulle
+ Class diaporama
+    events souris
+        on(click, moveLeft)
+        on(click, moveRight)
+        mouse(mouseover, clearInterval)
+        mouse(mouseover, moveRight)
+        
+    events touch
+        on(keydown, moveLeft)
+        on(keydown, moveRight)
+    
+    methods
+        moveLeft();
+        moveRight();
+        mouseOver();//pb fonctionnement
+        mouseLeave();//pb fonctionnement
+        
+    propriétés
+        mouseover
+        mouseLeave
+        
+Class Popup
+    events
+        on(click, openResa)
+        on(stop, lancerResa)
+    
+    methods
+        masquerInfo(); //clic croix
+        afficher(); // infos station
+        masquer(); // popup infos
+        remplirInfo(); // infos stations html
+        
+    propriétés
+        visible
+        
+Class Signature
+    events
+        on(mousedown, startDraw)
+        on(mouseup, stopDraw)
+        on(mousemove, movePosition)
+        evts tactiles
+        on(mousedown, startDraw)
+        on(mouseup, stopDraw)
+        on(touchmove, movePositionTouch)
+    
+    methods
+        startDraw
+        stopDraw
+        movePosition
+        movePositionTouch
+        resizeEvent
+        
+    propriétés
+        visible
+        currentResa       
+                      
+ Class ModalReservation
+    events
+        on(click, lancerReservation)
+        on(stop, lancerResa)
+    
+    methods
+        setPopup();
+        lancerReservation();
+        hide();
+        show();
+        timer();//message confirmation
+        
+    propriétés
+        visible
+             
+        
+    

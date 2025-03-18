@@ -1,0 +1,83 @@
+/*l'initialisation se fait par un objet, le main qui construit tous les objets nécessaires au démarrage de l'application*/
+/*
+
+-carrousel
+
+
+- Carte
+    marqueurs []
+    popup
+    --------
+    ajouterMarqueur(infos) {
+        onclick(popup.afficher(infosDuMarqueur))
+    }
+    onClickOnMarker()
+
+- Popup
+    afficher(infos2)
+    masquer()
+    reserver()
+    canvas
+    nom
+    stationConcernee
+
+- Canvas (signature)
+    effacer()
+    signature
+    
+    (){
+        
+    }
+    
+- (slider)
+
+    
+- Formulaire (après resa)
+
+    
+- GestionnaireDonnees
+    
+
+c = new Carte
+p = new Popup
+
+c.popup = p
+*/
+var carteAmiens;
+var popup;
+var formulaire;
+$(document).ready(function () {
+
+    //latitude et longitude ville d'amiens
+    var amiens = [49.894067, 2.2957529999999906];
+    carteAmiens = Object.create(Carte);
+    carteAmiens.init(amiens, "map");
+
+    var modaleReservation = Object.create(ModaleReservation);
+    modaleReservation.init("#compteur", popup);
+    /* timer = Object.create(Timer);
+     timer.init("#messageResaFin", popup);*/
+    popup = Object.create(Popup);
+    popup.init("#info", modaleReservation, carteAmiens);
+
+    modaleReservation.setPopup(popup);
+
+    carteAmiens.onClickOnMarker = function (event /*marker*/ ) {
+        var infos = trouverStationParCoordonnees(event.latlng.lat, event.latlng.lng);
+        console.log(carteAmiens);
+        carteAmiens.stationSelectionnee = infos;
+        popup.afficher(infos);
+    }
+
+    var signature = Object.create(CanvasManager);
+    signature.init('#canvas', modaleReservation, popup);
+
+
+    /* var formulaire = Object.create(Formulaire);
+     formulaire.init('#nom', '#prenom', '.champ')*/
+
+
+
+
+
+});

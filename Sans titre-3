@@ -1,0 +1,13 @@
+Class Timer
+    events
+        on(click, lancerResa)
+        on(stop, lancerResa)
+    
+    methods
+        lancerResa
+        hide
+        
+    propriétés
+        visible
+        currentResa
+    

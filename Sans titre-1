@@ -1,0 +1,8 @@
+this.boutonAnnulerResa.on('click', () => {
+    this.formulaire.reset();
+    this.popup.hide();
+    this.timer.reset();
+});
+
+
+document.getElemnt.classList.remove('')

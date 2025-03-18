@@ -1,0 +1,23 @@
+au click sur le bouton
+    @annulerResa()
+    
+evenement touch mobile sur le bouton
+    @annulerResa()
+
+au click sur une station de vélo
+    -> 
+    
+    
+au click sur effacer 
+
+@alias annulerResa
+    -> on masque la popup ()
+    -> on arrete de décompter le temps
+    -> on remet le texte avec le texte initial
+
+
+//TODO renommer les fichiers (tu as 3 "popup" "timer" "modaleResa")
+
+si une résa est en cours
+    au "timer 1s"
+        -> on met a jour le timer

@@ -1,0 +1,83 @@
+/*diaporama*/
+#slider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    margin: auto;
+
+}
+
+.mySlider {
+    position: relative;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+
+
+.mySlider_next,
+.mySlider_prev {
+    position: absolute;
+    top: 35%;
+    z-index: 999;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 2% 4%;
+    background: rgba(255, 255, 255, 0.4);
+    color: darkgreen;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2em;
+    opacity: 1;
+    cursor: pointer;
+
+}
+
+.mySlider_next:hover,
+.mySlider_prev:hover {
+    opacity: 0.8;
+    -webkit-transition: all 0.2s ease;
+}
+
+.mySlider_next {
+    right: 0;
+}
+
+.mySlider ul {
+    position: relative;
+    height: 426px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mySlider ul li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #f1f1f1;
+    display: block;
+    width: 1120px;
+
+    text-align: center;
+}
+
+.consignes {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#carrousel ul li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+
+}

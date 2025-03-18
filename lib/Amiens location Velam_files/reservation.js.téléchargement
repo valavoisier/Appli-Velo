@@ -1,0 +1,69 @@
+var Popup = {
+    init: function (selector, instanceDelaModaleDeReservation, laCarte) {
+        //console.log("instanceDelaModaleDeReservation", instanceDelaModaleDeReservation);
+        this.selector = selector;
+        this.prenomSelector = $(selector + " #prenom")[0];
+        this.nomSelector = $(selector + " #nom")[0];
+
+        $(selector + " .openresa")[0].onclick = openResa;
+        //affiche la popup formulaire / signature
+        function openResa() {
+
+
+            //bloquer reservation si aucun vélo disponible
+            var veloDispo = laCarte.stationSelectionnee.available_bikes;
+            console.log(veloDispo);
+            if (veloDispo === 0) {
+                alert("aucun vélo disponible, veuillez séléctionner une autre station");
+            } else {
+                $(selector + " #resa").addClass("visible");
+            }
+
+        };
+        //masquer les infos au clic de la croix
+        function masquerInfo() {
+            $(selector + " #info").removeClass("visible")
+        }
+        var $span = $(selector + ' .close');
+        $span.on('click', masquerInfo);
+
+        function masquerInfo() {
+
+            $("#info").removeClass("visible")
+        }
+
+        //evenement ouverture popup reservation en cours
+        var $boutonReserver = $(selector + ' #reserver');
+        $boutonReserver.on('click', () => {
+            //preparer les infos a envoyer
+            var stationSelectionnee = this.stationTrouvee;
+            var prenom = this.prenomSelector.value;
+            var nom = this.nomSelector.value;
+            console.log(prenom);
+            console.log(nom);
+
+            instanceDelaModaleDeReservation.show();
+            instanceDelaModaleDeReservation.lancerReservation(stationSelectionnee);
+        });
+    },
+    afficher: function (stationTrouvee) {
+        this.stationTrouvee = stationTrouvee;
+        this.remplirInfo(stationTrouvee);
+        $(this.selector).addClass("visible")
+    },
+
+    masquer: function () {
+        $(this.selector).removeClass("visible")
+
+    },
+    //méthode remplissage popup infos station
+    remplirInfo: function (station) {
+        document.getElementById('nomstation').innerHTML = station.name;
+        document.getElementById('adressestation').innerHTML = station.address;
+        document.getElementById('velodisponible').innerHTML = station.available_bikes;
+        document.getElementById('pointattache').innerHTML = station.available_bike_stands;
+        document.getElementById('status').innerHTML = station.status;
+
+
+    },
+};

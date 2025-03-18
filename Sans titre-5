@@ -1,0 +1,4 @@
+Carte
+  onClick
+    //assigner stationSelectionnee a la bonne valeur
+    this.stationSelectionnee = quelquechose; //trouver la station

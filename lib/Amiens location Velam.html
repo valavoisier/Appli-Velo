@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:52084/index.html -->
+<html data-brackets-id="137" lang="fr"><head data-brackets-id="138"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title data-brackets-id="140">Amiens location Velam</title>
+    <meta data-brackets-id="141" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!------ajout de css bootstrap--->
+    <link data-brackets-id="142" rel="stylesheet" href="./Amiens location Velam_files/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!------ajout de css spécifique Leaflet--->
+    <link data-brackets-id="143" rel="stylesheet" href="./Amiens location Velam_files/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
+    <!------ajout de css spécifique MarkerCluster
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />--->
+    <link data-brackets-id="144" href="./Amiens location Velam_files/css" rel="stylesheet">
+    <!---------css personnel----------->
+    <link data-brackets-id="145" rel="stylesheet" type="text/css" href="./Amiens location Velam_files/style.css">
+
+    <link data-brackets-id="146" rel="stylesheet" href="./Amiens location Velam_files/all.css">
+
+
+    <script data-brackets-id="147" src="./Amiens location Velam_files/axios.min.js.téléchargement"></script>
+    <!---------bootstrap----------->
+    <script data-brackets-id="148" src="./Amiens location Velam_files/jquery-3.3.1.slim.min.js.téléchargement" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script data-brackets-id="149" src="./Amiens location Velam_files/popper.min.js.téléchargement" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script data-brackets-id="150" src="./Amiens location Velam_files/bootstrap.min.js.téléchargement" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+
+<body data-brackets-id="151">
+    <div data-brackets-id="152" class="container-fluid">
+
+        <div data-brackets-id="153" class="row justify-content-center"><img data-brackets-id="154" class="img-fluid" src="./Amiens location Velam_files/Logo-Velam-v2.jpg" alt="">
+            <img data-brackets-id="155" class="img-fluid" src="./Amiens location Velam_files/bandeau-Velam.png" alt=""></div>
+
+
+        <nav data-brackets-id="156" class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+            <button data-brackets-id="157" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span data-brackets-id="158" class="navbar-toggler-icon"></span>
+            </button>
+            <div data-brackets-id="159" class="collapse navbar-collapse" id="navbarText">
+                <ul data-brackets-id="160" class="navbar-nav mr-auto">
+                    <li data-brackets-id="161" class="nav-item active">
+                        <a data-brackets-id="162" class="nav-link" href="http://127.0.0.1:52084/index.html#">Comment ça marche ? <span data-brackets-id="163" class="sr-only">(current)</span></a>
+                    </li>
+                    <li data-brackets-id="164" class="nav-item">
+                        <a data-brackets-id="165" class="nav-link" href="http://127.0.0.1:52084/index.html#">Les stations</a>
+                    </li>
+                    <li data-brackets-id="166" class="nav-item">
+                        <a data-brackets-id="167" class="nav-link" href="http://127.0.0.1:52084/index.html#">Mes réservations</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+
+
+        <div data-brackets-id="168" class="row justify-content-center">
+
+            <h2 data-brackets-id="169">Bienvenue sur le site de réservation de vélos de la ville d'Amiens.</h2>
+        </div>
+        <div data-brackets-id="170" class="row">
+            <h3 data-brackets-id="171"><span data-brackets-id="172" class="fas fa-info-circle"></span> Comment ça marche ?</h3>
+        </div>
+        <div data-brackets-id="173" id="slider">
+
+            <div data-brackets-id="174" class="mySlider" style="width: 640px; height: 557px;">
+
+                <a data-brackets-id="175" href="http://127.0.0.1:52084/index.html#" class="mySlider_next">❯</a>
+                <a data-brackets-id="176" href="http://127.0.0.1:52084/index.html#" class="mySlider_prev">❮</a>
+                <ul data-brackets-id="177" style="width: 2560px; margin-left: -640px;">
+
+                    
+                    
+                    
+                    
+                <li data-brackets-id="178"><img data-brackets-id="179" src="./Amiens location Velam_files/velam-cathedrale.jpg" alt="Image 1">
+                        <div data-brackets-id="180" class="legende">
+                            <h3 data-brackets-id="181">Trouver son vélo</h3>
+                            <p data-brackets-id="182">Choisissez votre station sur la carte</p>
+                        </div>
+                    </li><li data-brackets-id="183"><img data-brackets-id="184" src="./Amiens location Velam_files/velam-station.png" alt="Image 2">
+                        <div data-brackets-id="185" class="legende">
+                            <h3 data-brackets-id="186">Informations station</h3>
+                            <p data-brackets-id="187">Vérifiez l'état de la station et le nombre de vélos disponibles puis cliquez sur "réservez votre vélo".</p>
+                        </div>
+                    </li><li data-brackets-id="188"><img data-brackets-id="189" src="./Amiens location Velam_files/velam_amiens.jpg" alt="Image 3" width="">
+                        <div data-brackets-id="190" class="legende">
+                            <h3 data-brackets-id="191">Réservation</h3>
+                            <p data-brackets-id="192">Entrez vos nom et prénon puis signez dans le cadre - validez.</p>
+                        </div>
+                    </li><li data-brackets-id="193"><img data-brackets-id="194" src="./Amiens location Velam_files/velam_amiens.jpg" alt="Image 3" width="">
+                        <div data-brackets-id="195" class="legende">
+                            <h3 data-brackets-id="196">Votre Réservation</h3>
+                            <p data-brackets-id="197">vous avez 20 minutes pour prendre votre vélo à la station concernée. </p>
+                        </div>
+                    </li></ul>
+            </div>
+
+        </div>
+
+
+
+        <div data-brackets-id="198" class="row">
+            <h3 data-brackets-id="199"><span data-brackets-id="200" class="fas fa-map-marker-alt"></span> Trouver son vélo</h3>
+        </div>
+        <div data-brackets-id="201" class="row">
+
+            <div data-brackets-id="202" id="map-container" class="col-sm-6 col-md-7 col-1g-8 col-xl-8">
+
+
+                <div data-brackets-id="203" id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;">
+                <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./Amiens location Velam_files/11127.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(305px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11127(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(561px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(305px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(561px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(305px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(561px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11127(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(49px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11127(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(817px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(49px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(817px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(305px, 666px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(561px, 666px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(49px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(817px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(49px, 666px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(817px, 666px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11127(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-207px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11127(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1073px, 154px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-207px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11128(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1073px, 410px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-207px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11126(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1073px, -102px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-207px, 666px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Amiens location Velam_files/11129(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1073px, 666px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(4.2478e+06px, 2.84879e+06px, 0px) scale(16384);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="http://127.0.0.1:52084/index.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="http://127.0.0.1:52084/index.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a></div></div></div></div>
+
+            </div>
+
+            <div data-brackets-id="204" id="station-container" class="col-sm-6 col-md-5 col-1g-4 col-xl-4">
+
+                <div data-brackets-id="205" id="inner-station-container">
+                    <div data-brackets-id="206" class="presentation">
+                        <h4 data-brackets-id="207">Informations station et réservation</h4>
+                    </div>
+                    <div data-brackets-id="208" class="explication">
+                        <hr data-brackets-id="209">
+                        <img data-brackets-id="210" class="before img-fluid" src="./Amiens location Velam_files/velovert.png" width="45" height="45" alt="">
+                        <p data-brackets-id="211">Sélectionner une station sur la carte pour afficher ses informations et réserver un vélo.</p>
+                        <hr data-brackets-id="212">
+                    </div>
+                    <div data-brackets-id="213" id="info">
+                        <div data-brackets-id="214" class="info-content"> <span data-brackets-id="215" class="close">×</span>
+                            <br data-brackets-id="216">
+                            <div data-brackets-id="217" id="status"></div>
+
+                            <div data-brackets-id="218" id="nomstation"></div>
+                            <hr data-brackets-id="219">
+                            <div data-brackets-id="220" class="flex">
+                                <h3 data-brackets-id="221" class="titre">Adresse:</h3>
+
+                                <div data-brackets-id="222" id="adressestation">
+                                </div>
+                            </div>
+                            <div data-brackets-id="223" class="flex">
+                                <h3 data-brackets-id="224" class="titre">Vélos disponibles:</h3>
+                                <div data-brackets-id="225" id="velodisponible"></div>
+                            </div>
+                            <div data-brackets-id="226" class="flex">
+                                <h3 data-brackets-id="227" class="titre">Points d'attache:</h3>
+                                <div data-brackets-id="228" id="pointattache"></div>
+
+                            </div>
+
+                            <hr data-brackets-id="229">
+
+                            <button data-brackets-id="230" type="button" class="alert alert-success btn-lg btn-block openresa">Réservez votre vélo</button>
+                            <div data-brackets-id="231" id="resa">
+                                <div data-brackets-id="232" class="presentation">
+                                    <h4 data-brackets-id="233">Réservation</h4>
+
+                                </div>
+                                <p data-brackets-id="234">Veuillez signer en ligne et valider votre réservation</p>
+                                <form data-brackets-id="235" id="formulaire">
+                                    <div data-brackets-id="236">
+                                        <input data-brackets-id="237" type="text" placeholder="Nom" id="nom" class="champ">
+                                    </div>
+                                    <div data-brackets-id="238">
+                                        <input data-brackets-id="239" type="text" placeholder="Prenom" id="prenom" class="champ">
+                                    </div>
+
+
+                                    <h3 data-brackets-id="240">Signature:</h3>
+                                    <canvas data-brackets-id="241" id="canvas" width="300" height="150">
+                                        <p data-brackets-id="242">Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+                                    </canvas>
+                                    <div data-brackets-id="243" class="btn-group" role="group" aria-label="Basic example">
+                                        <input data-brackets-id="244" class="alert alert-success btn-lg" type="button" id="reserver" value="Réserver"> &nbsp;&nbsp;<input data-brackets-id="245" class="alert alert-success btn-lg" type="button" id="reset" value="Effacer">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-brackets-id="246" class="row">
+
+            <h3 data-brackets-id="247"><span data-brackets-id="248" class="fas fa-bicycle"></span> Votre réservation</h3>
+
+
+
+        </div>
+        <div data-brackets-id="249" class="row">
+            <div data-brackets-id="250" id="chrono">
+
+                <div data-brackets-id="251" id="compteur">
+                    <div data-brackets-id="252" class="presentation">
+                        <h4 data-brackets-id="253">Etat de la réservation</h4>
+                    </div>
+
+                    <div data-brackets-id="254" id="messageResaFin">
+                        <p data-brackets-id="255"> Votre réservation : <span data-brackets-id="256" id="stationResa"></span> </p>
+
+                    </div>
+                    <div data-brackets-id="257" id=" timer">
+                        <p data-brackets-id="258">temps restant : <span data-brackets-id="259" id="minutes"></span><span data-brackets-id="260" id="secondes"></span></p>
+
+                        <button data-brackets-id="261" type="button" id="stop" class="alert alert-success btn-lg">Annuler la réservation</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-----ajout de la bibliothèque Leaflet-->
+    <script data-brackets-id="262" src="./Amiens location Velam_files/leaflet.js.téléchargement" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <!-----ajout du plugin markercluster-->
+    <script data-brackets-id="263" src="./Amiens location Velam_files/leaflet.markercluster.js.téléchargement"></script>
+    <!---------JQuery------------>
+    <script data-brackets-id="264" src="./Amiens location Velam_files/jquery.min.js.téléchargement"></script>
+    <!---------javascript personnel------------>
+    <script data-brackets-id="265" type="text/javascript" src="./Amiens location Velam_files/main.js.téléchargement"></script>
+    <script data-brackets-id="266" type="text/javascript" src="./Amiens location Velam_files/carte.js.téléchargement"></script>
+    <script data-brackets-id="267" type="text/javascript" src="./Amiens location Velam_files/reservation.js.téléchargement"></script>
+    <script data-brackets-id="268" type="text/javascript" src="./Amiens location Velam_files/donnees_jcd.js.téléchargement"></script>
+    <script data-brackets-id="269" type="text/javascript" src="./Amiens location Velam_files/diaporama.js.téléchargement"></script>
+    <script data-brackets-id="270" type="text/javascript" src="./Amiens location Velam_files/signature.js.téléchargement"></script>
+    <script data-brackets-id="271" type="text/javascript" src="./Amiens location Velam_files/formulaire.js.téléchargement"></script>
+    <script data-brackets-id="272" type="text/javascript" src="./Amiens location Velam_files/ModalReservation.js.téléchargement"></script>
+
+
+
+</body></html>

@@ -1,0 +1,112 @@
+var ModaleReservation = {
+    init: function (selectorModaleReservation) {
+        this.element = document.querySelector(selectorModaleReservation);
+    },
+    setPopup: function (instanceDeLaPopup) {
+        this.instanceDeLaPopup = instanceDeLaPopup;
+    },
+    hide: function () {
+        this.element.classList.remove('visible');
+    },
+    show: function () {
+        this.element.classList.add('visible');
+    },
+    lancerReservation: function (station, prenom, nom, nomSelector) {
+        let dateResa = new Date().getTime();
+        let nomStation = station.name;
+        //mise en place session storage
+        sessionStorage.setItem("dateResa", dateResa);
+
+        // Enregistre la session storage du nom de la station dans son attribut
+        sessionStorage.setItem("nomStation", station.name);
+        //insert le nom de la station et le nom et prenom du loueur 
+        document.getElementById('stationResa').innerHTML = "Vélo réservé à la station " + station.name + " par " + prenom + " " + nom; //this.prenomSelector + this.nomSelector;
+
+        function timer() {
+            // let compteur = document.getElementById("timer");
+            let minElt = document.getElementById("minutes");
+            let secElt = document.getElementById("secondes");
+
+            let dureeResa = 1200;
+
+            let newDateResa = new Date().getTime();
+            let tempsPasse = Math.round((newDateResa - dateResa) / 1000);
+            let decompte = dureeResa - tempsPasse;
+            let minDecompte = Math.floor(decompte / 60);
+            let secDecompte = decompte - minDecompte * 60;
+            secElt.textContent = secDecompte + " s";
+            minElt.textContent = minDecompte + " min : ";
+            console.log(secElt);
+            console.log(secDecompte);
+            //////////////////////////////////////////
+            /* if (minDecompte < 10) { // Si il reste moins de 10 minutes
+                 // Ajoute un 0 devant les minutes
+                 minElt = "0" + minDecompte;
+             } else {
+                 // Sinon les minutes s'affichent normalement
+                 minElt = minDecompte;
+             }
+
+             if (secDecompte < 10) { // Si il reste moins de 10 secondes
+                 // Ajoute un 0 devant les secondes
+                 secElt = "0" + secDecompte;
+             } else {
+                 // Sinon les secondes s'affichent normalement
+                 secElt = secDecompte;
+             };*/
+            /////////////////////////////////////////////////
+        }
+
+        timer();
+        // Affichage du message de confirmation et decompte 20 min
+        var decompteTemps = setInterval(timer, 1000);
+
+
+        //évènements sur bouton annuler la réservation
+        var stop = document.getElementById("stop");
+        stop.addEventListener("click", () => {
+            this.hidePopup();
+            this.resetTimer(decompteTemps);
+        });
+    },
+    hidePopup: function () {
+        this.instanceDeLaPopup.masquer();
+    },
+    resetTimer: function (decompteTemps) {
+        clearInterval(decompteTemps);
+        minElt = null;
+        secElt = null;
+        sessionStorage.clear();
+
+    }
+};
+
+
+/*
+/ Enregistrer des données dans sessionStorage
+sessionStorage.setItem('clé', 'valeur');
+
+// Récupérer des données depuis sessionStorage
+var data = sessionStorage.getItem('clé');
+
+// Supprimer des données de sessionStorage
+sessionStorage.removeItem('clé');
+
+// Supprimer toutes les données de sessionStorage
+sessionStorage.clear();
+
+//utiliser key et length
+*/
+/*
+// Événements lors de la validation du Canvas
+document.getElementById("reserver").addEventListener("click", function () {
+    localStorage.setItem("signature", signature.canvas.toDataURL()); //Méthode qui convertit le contenu du canvas en données texte utilisable dans une image
+    // signature.resetCanvas(); // Efface le Canvas A revoir!
+
+    // Affichage du message de confirmation
+    document.getElementById("messageConfirmationLocationmessageResaFin").style.display = "block";
+    // Insert le nom de la station
+    document.getElementById("messagbackupmodaleresaon " + this.nomStation;
+});
+}
+*/
